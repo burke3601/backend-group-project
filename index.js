@@ -139,9 +139,9 @@ server.listen(port, host, () => {
 // })
 
 
-app.get('/myaccount', (req,res) => {
-    res.write(`${}'s Profile`)
-})
+// app.get('/myaccount', (req,res) => {
+//     res.write(`${}'s Profile`)
+// })
 
 server.listen(PORT, () => {
     console.log(`Running at http://localhost:${PORT}`);

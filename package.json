@@ -15,12 +15,24 @@
     "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-es6-template-engine": "^2.2.3",
+    "express-session": "^1.17.1",
     "morgan": "^1.10.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.5"
-  }
+    "sequelize": "^6.3.5",
+    "session-file-store": "^1.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burke3601/backend-group-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burke3601/backend-group-project/issues"
+  },
+  "homepage": "https://github.com/burke3601/backend-group-project#readme"
 }

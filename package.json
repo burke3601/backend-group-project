@@ -22,5 +22,13 @@
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.3.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burke3601/backend-group-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/burke3601/backend-group-project/issues"
+  },
+  "homepage": "https://github.com/burke3601/backend-group-project#readme"
 }

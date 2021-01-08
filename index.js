@@ -138,6 +138,12 @@ server.listen(port, host, () => {
 //     </ul>`)
 // })
 
-// server.listen(PORT, () => {
-//     console.log(`Running at http://localhost:${PORT}`);
-// });
+
+app.get('/myaccount', (req,res) => {
+    res.write(`${}'s Profile`)
+})
+
+server.listen(PORT, () => {
+    console.log(`Running at http://localhost:${PORT}`);
+});
+

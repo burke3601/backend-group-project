@@ -1,4 +1,9 @@
 node_modules
 .env
+<<<<<<< HEAD
 sessions
 config.json
+=======
+config.json
+
+>>>>>>> e69f0fad76a204d823ede9a7c117a5dd01a9e488

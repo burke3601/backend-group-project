@@ -1,0 +1,16 @@
+${header}
+<div class="container">
+    <h2>Add a name to your team</h2>
+    <form action="/members-only/userhome/newTeam" method="POST">
+        <label for="name">
+            <input name = "name" type="text" placeholder="name" required>
+        </label>
+        <h3>Now add all the people you want to help you out with the chores!!!</h3>
+        <ul>
+            ${contacts.map(el => `<li>${el.username}  <input type="checkbox" name="checked" id="${el.username}"  ></li>`).join('')}
+        </ul>
+        <button type="submit">submit</button>
+    </form>
+</div><br><br><br>
+${footer}
+

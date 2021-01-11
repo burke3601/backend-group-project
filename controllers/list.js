@@ -134,7 +134,7 @@ const editContact = async (req, res)=>{
 }
 
 module.exports = {
-    homePage,
+    listPage,
     newTeam,
     processTeam,
     showContact,

@@ -1,8 +1,0 @@
-${header}
-
-<a href="newContact">Add new contact</a>
-    <ul>
-    ${contacts.map(el => `<li><a href="contact/${el.id}">${el.name}</a></li>`).join('')}
-    </ul>
-
-${footer}

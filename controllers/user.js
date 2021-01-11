@@ -68,7 +68,7 @@ const processLogin = async (req, res) => {
             }
 
             req.session.save(() => {
-                res.redirect(`/members-only/list`)
+                res.redirect(`/members-only/userhome`)
             })
         }
     } else {

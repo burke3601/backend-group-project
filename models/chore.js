@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Chore.belongsTo(models.Team)
+      Chore.hasMany(models.Comment)
     }
   };
   Chore.init({

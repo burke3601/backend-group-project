@@ -4,7 +4,7 @@ const {Contact, User, Team} = require('../models')
 // const Sequelize = require('sequelize')
 
 
-const listPage = (req, res)=>{
+const homePage = (req, res)=>{
     const { username, id } = req.session.user
     if (id) {
         res.render("userhome", {
@@ -128,7 +128,7 @@ const editContact = async (req, res)=>{
 }
 
 module.exports = {
-    listPage,
+    homePage,
     newTeam,
     processTeam,
     showContact,

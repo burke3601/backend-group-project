@@ -140,11 +140,7 @@ server.listen(port, host, () => {
 
 
 // app.get('/myaccount', (req,res) => {
-<<<<<<< HEAD
 //     res.write(`${something}'s Profile`)
-=======
-//     res.write(`${}'s Profile`)
->>>>>>> e69f0fad76a204d823ede9a7c117a5dd01a9e488
 // })
 
 // server.listen(PORT, () => {

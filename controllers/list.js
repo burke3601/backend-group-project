@@ -4,14 +4,18 @@ const {Contact, User, Team} = require('../models')
 // const Sequelize = require('sequelize')
 
 
-const homePage = (req, res)=>{
+const listPage = async(req, res)=>{
     const { username, id } = req.session.user
+    let teams = []
     if (id) {
+        teams = await Team.findAll()
+        console.log(teams)
         res.render("userhome", {
             ...layout,
             locals: {
                 title: "User home",
-                username
+                username,
+                teams
 
             }
         })
@@ -52,26 +56,27 @@ const processTeam= async (req, res)=>{
     const { checked } = req.body
     //res.send(`you have created a team named: ${name} with the following members: ${isChecked}`)
         console.log(checked)
+    try {
+        if (name && id) {
+            const newTeam = await Team.create({
+                name
+            })
+            res.redirect(`${req.baseUrl}/userhome`)
+        }else {
+            res.redirect(`${req.baseUrl}/userhome`)
+        }
+    } 
+    catch (e) {
+        console.log(`ERROR ${e}`)
+        res.redirect(`${req.baseUrl}/userhome`)
+            }
+        
+    }
     
-    //try {
-        // if (name && id) {
-        //     const newTeam = await Team.create({
-        //         name,
-        //         isChecked
-        //     })
-        // }
-            
-    //         res.redirect(`${req.baseUrl}/userhome`)
-    //     } else {
-    //         res.redirect(`${req.baseUrl}/userhome`)
-    //     }
-    // } catch (e) {
-    //     console.log(`ERROR ${e}`);
-    //     res.redirect(`${req.baseUrl}/userhome`)
-    // }
 
 
-}
+
+
 
 const showContact = async (req, res) => {
     console.log('redirecting somewhere')
@@ -128,7 +133,7 @@ const editContact = async (req, res)=>{
 }
 
 module.exports = {
-    homePage,
+    listPage,
     newTeam,
     processTeam,
     showContact,

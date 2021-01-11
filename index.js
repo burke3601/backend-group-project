@@ -28,7 +28,6 @@ app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
 
-
 app.use(session({
     store: new FileStore(), // no options for now
     secret: process.env.SESSION_SECRET,
@@ -40,9 +39,13 @@ app.use(session({
     }
 }));
 
+
 app.use(homeRouter)
 app.use('/user', userRouter)
 app.use('/members-only', listRouter)
+
+
+
 
 
 server.listen(port, host, () => {
@@ -140,7 +143,7 @@ server.listen(port, host, () => {
 
 
 // app.get('/myaccount', (req,res) => {
-//     res.write(`${something}'s Profile`)
+//     res.write(`${}'s Profile`)
 // })
 
 // server.listen(PORT, () => {

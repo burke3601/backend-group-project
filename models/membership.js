@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     userID: DataTypes.INTEGER,
       userID: {
         type: DataTypes. STRING,
-        rreferences: 'User',
+        references: 'User',
         key: 'id'
       },
     teamID: {

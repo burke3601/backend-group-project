@@ -35,9 +35,9 @@
     : delete
 ## rating--> based on completed chores--
 
-## npx sequelize-cli model:generate --name Chore --attributes 'name:STRING, isComplete:BOOLEAN, teamID:INTEGER' 
-## npx sequelize model:generate --name User --attributes 'username:STRING, hash:STRING, rating:INTEGER'  
-## npx sequelize model:generate --name Team --attributes ' name:STRING' 
-## npx sequelize model:generate --name Comment --attributes 'itemID:INTEGER, userID:INTEGER'
-## npx sequelize model:generate --name Membership --attributes 'userID:INTEGER, teamID:INTEGER'      
+ npx sequelize-cli model:generate --name Chore --attributes 'name:STRING, isComplete:BOOLEAN, teamID:INTEGER' 
+ npx sequelize model:generate --name User --attributes 'username:STRING, hash:STRING, rating:INTEGER'  
+ npx sequelize model:generate --name Team --attributes ' name:STRING' 
+ npx sequelize model:generate --name Comment --attributes 'itemID:INTEGER, userID:INTEGER'
+ npx sequelize model:generate --name Membership --attributes 'userID:INTEGER, teamID:INTEGER'      
 

@@ -12,26 +12,29 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Membership.hasMany(models.User, {
-        foreignKey: 'userID'
-      });
-      Membership.hasMany(models.Team, {
-        foreignKey: ' teamID'
+        foreignKey: 'id'
       })
+      Membership.hasMany(models.Team, {
+        foreignKey: 'id'
+
+      });
     }
   };
   Membership.init({
-    userID: DataTypes.INTEGER,
-      userID: {
-        type: DataTypes. STRING,
-        rreferences: 'User',
-        key: 'id'
-      },
+    userID: {
+      type: DataTypes.INTEGER,
+      references: 'User',
+      key: 'id'
+
+    },
     teamID: {
       type: DataTypes.INTEGER,
       references: 'Team',
       key: 'id'
+
     }
-  }, {
+  }, 
+     {
     sequelize,
     modelName: 'Membership',
   });

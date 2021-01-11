@@ -3,12 +3,9 @@ ${header}
 
 <a href="newTeam">Create a New Team</a><br><br>
 <label for="Teams">View your current Teams</label><br>
-<select name="Teams" id="Teams">
-    <option value="team1">home chores</option>
-    <option value="team2">hobby teams chores</option>
-    <option value="team3">my kids chores</option>
-    <option value="team4">chores with the wifey</option>
-  </select>
+<ul>
+  ${teams.map(el => `<li>${el.name}, ${el.id}</li>`).join('')}
+</ul>
 <br><br><br>
 
 ${footer}

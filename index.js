@@ -16,7 +16,7 @@ const server = http.createServer(app)
 app.use(logger)
 //app.use(helmet())
 
-const port = 3000
+const port = 3030
 const host = 'localhost'
 
 // app.use(express.static("public"))
@@ -53,7 +53,7 @@ app.use('/chores' , choreRouter )
 
 
 server.listen(port, host, () => {
-    console.log(`Running on host: port`)
+    console.log(`Running on host:${host} port: ${port}`)
 })
 
 

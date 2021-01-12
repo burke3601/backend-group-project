@@ -1,0 +1,36 @@
+/*>>>USEFUL FLEXBOX PATTERNS<<<<
+
+EVEN COLUMNS ensures that all direct children of the parent are equal width, no matter how many you have or what the content is inside of them.*/
+.even-columns {
+    display: flex;
+}
+
+.even-columns > * {
+    flex-basis: 100%;
+}
+
+/* GRID-ISH A grid style layout that doesn't require any media queries.*/
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 1 1 10em;
+}
+
+/*CONTENT & SIDEBAR Create a standard main content area with a sidebar...classes can be placed on the children.*/
+.content-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-sidebar > *:nth-child(1) {
+    flex: 1 1 70%;
+    min-width: 25ch;
+}
+
+.content-sidebar > *:nth-child(2) {
+    flex: 1 1 30%;
+    min-width: 15ch;
+}

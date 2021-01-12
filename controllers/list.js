@@ -9,7 +9,6 @@ const membership = require('../models/membership')
 
 const listPage = async(req, res)=>{
     const { username, id } = req.session.user
-<<<<<<< HEAD
     const  checked  = req.body
     
     const  members = await Membership.findAll({
@@ -22,20 +21,6 @@ const listPage = async(req, res)=>{
         const team = await Team.findOne({
             where:{
                 id: members[i].teamID
-=======
-    let teams = []
-    if (id) {
-        teams = await Team.findAll()
-        console.log(teams)
-        res.render("userhome", {
-            ...layout,
-            locals: {
-                title: "User home",
-                username,
-                teams,
-                id
-
->>>>>>> main
             }
         })
         teams.push(team)

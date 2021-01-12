@@ -43,8 +43,8 @@ app.use(session({
 app.use(homeRouter)
 app.use('/user', userRouter)
 app.use('/members-only', listRouter)
-app.use('/chores' , choreRouter )
-app.use('/members-only/:id', teamRouter) 
+app.use('/members-only/team', teamRouter) 
+app.use('/members-only/:id/new' , choreRouter)
 
 
 

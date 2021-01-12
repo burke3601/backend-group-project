@@ -1,6 +1,7 @@
 const {layout} = require('../utils')
 const { User, Team, Membership} = require('../models')
-//const {Team} = require('../models/team')
+const {Team} = require('../models/team')
+
 
 
 const teamPage = (req,res) => {

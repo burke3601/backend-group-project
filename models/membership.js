@@ -25,13 +25,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: 'User',
       key: 'id'
-
     },
     teamID: {
       type: DataTypes.INTEGER,
       references: 'Team',
       key: 'id'
-
     }
   }, 
      {

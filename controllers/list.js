@@ -15,7 +15,8 @@ const listPage = async(req, res)=>{
             locals: {
                 title: "User home",
                 username,
-                teams
+                teams,
+                id
 
             }
         })

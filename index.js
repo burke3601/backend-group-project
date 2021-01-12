@@ -44,7 +44,7 @@ app.use(homeRouter)
 app.use('/user', userRouter)
 app.use('/members-only', listRouter)
 app.use('/chores' , choreRouter )
-app.use('/members-only/:id', teamRouter)
+app.use('/members-only/:id', teamRouter) 
 
 
 

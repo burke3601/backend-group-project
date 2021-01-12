@@ -3,15 +3,10 @@ const {Contact, User, Team, Membership} = require('../models')
 const user = require('../models/user')
 const membership = require('../models/membership')
 //const membership = require('../models/membership')
-
 // const Sequelize = require('sequelize')
-
-
 const listPage = async(req, res)=>{
     const { username, id } = req.session.user
-<<<<<<< HEAD
     const  checked  = req.body
-    
     const  members = await Membership.findAll({
         where:{
             userID: id
@@ -22,25 +17,10 @@ const listPage = async(req, res)=>{
         const team = await Team.findOne({
             where:{
                 id: members[i].teamID
-=======
-    let teams = []
-    if (id) {
-        teams = await Team.findAll()
-        console.log(teams)
-        res.render("userhome", {
-            ...layout,
-            locals: {
-                title: "User home",
-                username,
-                teams,
-                id
-
->>>>>>> main
             }
         })
         teams.push(team)
     }
-    
     //console.log(`***********${members[3].dataValues.userID}**********`)
     //console.log(`***********${team}**********`)
     res.render("userhome", {
@@ -50,7 +30,6 @@ const listPage = async(req, res)=>{
             username,
             teams,
             members
-
         }
     })
 }
@@ -59,18 +38,13 @@ const listPage = async(req, res)=>{
     //     const teamMember = await User.findOne({
     //         where:{
     //             id: members[i].userID
-            
     //         }
     //     })
     // }
-    
 // }
-
 const newTeam = async (req, res)=>{
     const { username, id } = req.session.user
-
     if (id) {
-
         let contacts = []
         try {
             contacts = await User.findAll()
@@ -79,19 +53,14 @@ const newTeam = async (req, res)=>{
             console.log(`THIS IS ERROR`, e);
         }
         res.render('forms/newTeamForm', {
-        
             ...layout,
             locals:{
                 title: 'Contact',
                 contacts,
-                
-               
             }
         })
     }
 }
-
-
 // && phone && id && email && address
 const processTeam= async (req, res)=>{
     console.log('processing contact')
@@ -103,15 +72,11 @@ const processTeam= async (req, res)=>{
         if (name) {
             const newTeam = await Team.create({
                 name,
-                
             })
-
             for(i = 0; i < checked.length; i++){
             let member = await User.findOne({
                 where: {
-                    
                     id: checked[i]
-                    
                 }
             })
             if(newTeam.id){
@@ -119,13 +84,8 @@ const processTeam= async (req, res)=>{
                     userID: member.id,
                     teamID: newTeam.id
                 })
-                
             }//console.log(teamMemberShip)
-            
-            
         }
-           
-            
             res.redirect(`${req.baseUrl}/userhome`,{
                 locals:{
                     member
@@ -134,19 +94,12 @@ const processTeam= async (req, res)=>{
         }else {
             res.redirect(`${req.baseUrl}/userhome`)
         }
-    } 
+    }
     catch (e) {
         console.log(`ERROR ${e}`)
         res.redirect(`${req.baseUrl}/userhome`)
             }
-        
     }
-    
-
-
-
-
-
 // const showContact = async (req, res) => {
 //     console.log('redirecting somewhere')
 //     const {
@@ -154,7 +107,6 @@ const processTeam= async (req, res)=>{
 //     } = req.params
 //     try {
 //         if (id) {
-
 //             const contact = await Contact.findOne({
 //                 where: {
 //                     id
@@ -165,10 +117,8 @@ const processTeam= async (req, res)=>{
 //                 locals: {
 //                     title: contact.name,
 //                     contact,
-
 //                 }
 //             })
-
 //         } else {
 //             res.redirect(`${req.baseUrl}/userhome`)
 //         }
@@ -189,18 +139,15 @@ const processTeam= async (req, res)=>{
 //         })
 //         //console.log(`getting contact ${contact}, ${contactId}`)
 //         res.render('forms/newTeamForm', {
-            
 //             ...layout,
 //             locals:{
 //                 title: 'edit Contacts',
-
 //             }
 //         })
 //     }else{
 //         res.redirect(`${req.baseUrl}/userhome`)
 //     }
 // }
-
 module.exports = {
     listPage,
     newTeam,
@@ -208,3 +155,8 @@ module.exports = {
     // showContact,
     // editContact
 }
+
+
+
+
+

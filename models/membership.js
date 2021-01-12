@@ -21,26 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Membership.init({
-<<<<<<< HEAD
-    userID: DataTypes.INTEGER,
-      userID: {
-        type: DataTypes. STRING,
-        references: 'User',
-        key: 'id'
-      },
-=======
     userID: {
       type: DataTypes.INTEGER,
       references: 'User',
       key: 'id'
-
     },
->>>>>>> main
     teamID: {
       type: DataTypes.INTEGER,
       references: 'Team',
       key: 'id'
-
     }
   }, 
      {

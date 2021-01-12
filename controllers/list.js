@@ -1,25 +1,74 @@
 const {layout} = require('../utils')
-const {Contact, User, Team} = require('../models')
+const {Contact, User, Team, Membership} = require('../models')
+const user = require('../models/user')
+const membership = require('../models/membership')
+//const membership = require('../models/membership')
 
 // const Sequelize = require('sequelize')
 
 
-const listPage = (req, res)=>{
+const listPage = async(req, res)=>{
     const { username, id } = req.session.user
+<<<<<<< HEAD
+    const  checked  = req.body
+    
+    const  members = await Membership.findAll({
+        where:{
+            userID: id
+        }
+    })
+        let teams = []
+        for(i = 0; i < members.length; i++){
+        const team = await Team.findOne({
+            where:{
+                id: members[i].teamID
+=======
+    let teams = []
     if (id) {
+        teams = await Team.findAll()
+        console.log(teams)
         res.render("userhome", {
             ...layout,
             locals: {
                 title: "User home",
-                username
+                username,
+                teams,
+                id
 
+>>>>>>> main
             }
         })
+        teams.push(team)
     }
+    
+    //console.log(`***********${members[3].dataValues.userID}**********`)
+    //console.log(`***********${team}**********`)
+    res.render("userhome", {
+        ...layout,
+        locals: {
+            title: "User home",
+            username,
+            teams,
+            members
+
+        }
+    })
 }
+    // let teamMembers = []
+    // for(i = 0; i< members.length; i++){
+    //     const teamMember = await User.findOne({
+    //         where:{
+    //             id: members[i].userID
+            
+    //         }
+    //     })
+    // }
+    
+// }
 
 const newTeam = async (req, res)=>{
     const { username, id } = req.session.user
+
     if (id) {
 
         let contacts = []
@@ -34,103 +83,128 @@ const newTeam = async (req, res)=>{
             ...layout,
             locals:{
                 title: 'Contact',
-                contacts
+                contacts,
+                
+               
             }
         })
     }
 }
 
-const getMember = ()=>{
-
-} 
 
 // && phone && id && email && address
 const processTeam= async (req, res)=>{
     console.log('processing contact')
     const { name } = req.body
-    const { id } = req.session.user
     const { checked } = req.body
-    //res.send(`you have created a team named: ${name} with the following members: ${isChecked}`)
+    const membersArray = []
         console.log(checked)
-    
-    //try {
-        // if (name && id) {
-        //     const newTeam = await Team.create({
-        //         name,
-        //         isChecked
-        //     })
-        // }
-            
-    //         res.redirect(`${req.baseUrl}/userhome`)
-    //     } else {
-    //         res.redirect(`${req.baseUrl}/userhome`)
-    //     }
-    // } catch (e) {
-    //     console.log(`ERROR ${e}`);
-    //     res.redirect(`${req.baseUrl}/userhome`)
-    // }
-
-
-}
-
-const showContact = async (req, res) => {
-    console.log('redirecting somewhere')
-    const {
-        id
-    } = req.params
     try {
-        if (id) {
+        if (name) {
+            const newTeam = await Team.create({
+                name,
+                
+            })
 
-            const contact = await Contact.findOne({
+            for(i = 0; i < checked.length; i++){
+            let member = await User.findOne({
                 where: {
-                    id
+                    
+                    id: checked[i]
+                    
                 }
             })
-            res.render('contact-details', {
-                ...layout,
-                locals: {
-                    title: contact.name,
-                    contact,
-
+            if(newTeam.id){
+                const teamMemberShip= await Membership.create({
+                    userID: member.id,
+                    teamID: newTeam.id
+                })
+                
+            }//console.log(teamMemberShip)
+            
+            
+        }
+           
+            
+            res.redirect(`${req.baseUrl}/userhome`,{
+                locals:{
+                    member
                 }
             })
-
-        } else {
+        }else {
             res.redirect(`${req.baseUrl}/userhome`)
         }
-    } catch (e) {
-        console.log(`ERROR`, e);
-        res.redirect("/members-only/userhome")
-    }
-}
-const editContact = async (req, res)=>{
-    console.log('*********entered edit**************')
-    const { id } = req.session.user
-    const { contactId } = req.params
-    if (id && contactId){
-        const contact = await Contact.findOne({
-            where:{
-                id: contactId
-            }
-        })
-        //console.log(`getting contact ${contact}, ${contactId}`)
-        res.render('forms/newTeamForm', {
-            
-            ...layout,
-            locals:{
-                title: 'edit Contacts',
-
-            }
-        })
-    }else{
+    } 
+    catch (e) {
+        console.log(`ERROR ${e}`)
         res.redirect(`${req.baseUrl}/userhome`)
+            }
+        
     }
-}
+    
+
+
+
+
+
+// const showContact = async (req, res) => {
+//     console.log('redirecting somewhere')
+//     const {
+//         id
+//     } = req.params
+//     try {
+//         if (id) {
+
+//             const contact = await Contact.findOne({
+//                 where: {
+//                     id
+//                 }
+//             })
+//             res.render('contact-details', {
+//                 ...layout,
+//                 locals: {
+//                     title: contact.name,
+//                     contact,
+
+//                 }
+//             })
+
+//         } else {
+//             res.redirect(`${req.baseUrl}/userhome`)
+//         }
+//     } catch (e) {
+//         console.log(`ERROR`, e);
+//         res.redirect("/members-only/userhome")
+//     }
+// }
+// const editContact = async (req, res)=>{
+//     console.log('*********entered edit**************')
+//     const { id } = req.session.user
+//     const { contactId } = req.params
+//     if (id && contactId){
+//         const contact = await Contact.findOne({
+//             where:{
+//                 id: contactId
+//             }
+//         })
+//         //console.log(`getting contact ${contact}, ${contactId}`)
+//         res.render('forms/newTeamForm', {
+            
+//             ...layout,
+//             locals:{
+//                 title: 'edit Contacts',
+
+//             }
+//         })
+//     }else{
+//         res.redirect(`${req.baseUrl}/userhome`)
+//     }
+// }
 
 module.exports = {
     listPage,
     newTeam,
     processTeam,
-    showContact,
-    editContact
+    // showContact,
+    // editContact
 }

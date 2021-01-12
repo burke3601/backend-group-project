@@ -47,7 +47,7 @@ const processLogin = async (req, res) => {
         username,
         password
     } = req.body
-
+    
     const user = await User.findOne({
         where: {
             username,

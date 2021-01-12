@@ -6,7 +6,7 @@ const http = require('http')
 const express = require('express')
 const morgan = require("morgan")
 
-const { homeRouter, userRouter, listRouter } = require('./routers')
+const { homeRouter, userRouter, listRouter, choreRouter } = require('./routers')
 
 const logger = morgan("tiny")
 
@@ -16,7 +16,7 @@ const server = http.createServer(app)
 app.use(logger)
 //app.use(helmet())
 
-const port = 3000
+const port = 3030
 const host = 'localhost'
 
 // app.use(express.static("public"))
@@ -27,7 +27,6 @@ const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
-
 
 app.use(session({
     store: new FileStore(), // no options for now
@@ -40,13 +39,21 @@ app.use(session({
     }
 }));
 
+
 app.use(homeRouter)
 app.use('/user', userRouter)
 app.use('/members-only', listRouter)
+app.use('/chores' , choreRouter )
+
+
+
+
+
+
 
 
 server.listen(port, host, () => {
-    console.log(`Running on host: port`)
+    console.log(`Running on host:${host} port: ${port}`)
 })
 
 
@@ -140,7 +147,7 @@ server.listen(port, host, () => {
 
 
 // app.get('/myaccount', (req,res) => {
-//     res.write(`${something}'s Profile`)
+//     res.write(`${}'s Profile`)
 // })
 
 // server.listen(PORT, () => {

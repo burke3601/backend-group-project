@@ -2,7 +2,7 @@ const {layout} = require('../utils')
 const { User, Team, Membership} = require('../models')
 const {Team} = require('../models/team')
 
-
+//team controller
 
 const teamPage = (req,res) => {
     const {id} = req.body

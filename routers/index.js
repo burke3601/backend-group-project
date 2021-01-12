@@ -4,4 +4,4 @@ module.exports = {
     listRouter: require ('./list'),
     choreRouter:require ('./chore'),
     teamRouter:require ('./team')
-}
+} 

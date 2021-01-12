@@ -9,3 +9,5 @@ router.get('/', teamControllers.teamPage)
 // router.get('/contact/editContact/:contactId', listControllers.editContact)
 //.post('/editContact/:contactId')
 module.exports = router
+
+//updating team router

@@ -4,8 +4,17 @@ ${header}
 <a href="newTeam">Create a New Team</a><br><br>
 <label for="Teams">View your current Teams</label><br>
 <ul>
+<<<<<<< HEAD
+  ${teams.map(el =>`<a href="${el.id}"><li>${el.name}</li></a>`).join('')}
+=======
   ${teams.map(el => `<li>${el.name}, ${el.id}</li>`).join('')}
+>>>>>>> main
 </ul>
-<br><br><br>
+<ul>
+  ${members.map(el =>`<li>${el.dataValues.userID}</li>`).join('')}
+</ul>
 
 ${footer}
+
+
+

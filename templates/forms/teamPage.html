@@ -9,7 +9,7 @@ ${header}
  </ul>
 
 
-<form  method="POST">
+<form action="${tid}/chore"  method="POST">
     <textarea name="chore" id="" cols="30" rows="10"></textarea>
   <button type="submit">Add Chore</button>
 </form>
@@ -17,12 +17,12 @@ ${header}
 ${chores.map(chore => `
   <div>
     <ul>
-     <li>${chore.name}</li>
+     <li>${chore.name} with ID: ${chore.id}</li>
     <ul>
       ${
       chore.Comments.map(c =>`<li> ${c.post}</li>`).join('')}
     </ul>
-    <form  method="POST">
+    <form action="${tid}/comment" method="POST">
       <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
       <input type="hidden" name="itemID" value="${chore.id}">
     <button type="submit">Add Comment</button>

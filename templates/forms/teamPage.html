@@ -1,0 +1,31 @@
+${header}
+<div class="container">
+
+<h1>welcome to ${thisTeam.name} Team </h1>
+
+<h2>Here are the members of this team</h2>
+ <ul>
+    ${users.map(el => `<li>${el.username} </li>`).join('')}
+ </ul>
+
+
+<form  method="POST">
+    <textarea name="chore" id="" cols="30" rows="10"></textarea>
+  <button type="submit">Add Chore</button>
+</form>
+<ul>
+  ${chores.map(el => `<li>${el.name} </li>`).join('')}
+</ul>
+<br><br>
+
+<form  method="POST">
+  <textarea name="comment" id="" cols="30" rows="10"></textarea>
+<button type="submit">Add Comment</button>
+</form>
+
+<ul>
+  <li>${comments} </li>
+</ul>
+</div>
+<br><br>
+${footer}

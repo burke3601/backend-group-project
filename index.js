@@ -6,7 +6,7 @@ const http = require('http')
 const express = require('express')
 const morgan = require("morgan")
 
-const { homeRouter, userRouter, listRouter, choreRouter } = require('./routers')
+const { homeRouter, userRouter, listRouter, choreRouter, teamRouter, commentRouter } = require('./routers')
 
 const logger = morgan("tiny")
 
@@ -43,7 +43,8 @@ app.use(session({
 app.use(homeRouter)
 app.use('/user', userRouter)
 app.use('/members-only', listRouter)
-app.use('/chores' , choreRouter )
+app.use('/members-only/team', teamRouter) 
+app.use('/members-only/:id/new' , choreRouter)
 
 
 

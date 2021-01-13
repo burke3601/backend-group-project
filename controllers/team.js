@@ -6,6 +6,7 @@ const { User, Team, Membership, Chore, Comment} = require('../models')
 
 const teamPage = async (req,res) => {
     const tid = req.params.id
+    const myname = req.session.user.username
     console.log(tid)
     //const message = "this is a chore"
     //if (tid) {
@@ -80,7 +81,7 @@ const teamPage = async (req,res) => {
             users,
             tid,
             chores,
-            
+            myname,
         },
         ...layout
     });

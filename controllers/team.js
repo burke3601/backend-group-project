@@ -39,7 +39,7 @@ const teamPage = async (req,res) => {
 
     const comments = await Comment.findOne ({
                 where: {
-                    id: 3
+                    id: 9
                 }
             }) 
             console.log(comments)

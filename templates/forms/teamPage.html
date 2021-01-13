@@ -20,7 +20,7 @@ ${chores.map(chore => `
      <li>${chore.name} with ID: ${chore.id}</li>
     <ul>
       ${
-      chore.Comments.map(c =>`<li> ${c.post}</li>`).join('')}
+      chore.Comments.map(c =>`<li> ${myname}: ${c.post}</li>`).join('')}
     </ul>
     <form action="${tid}/comment" method="POST">
       <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>

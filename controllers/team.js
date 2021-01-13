@@ -5,6 +5,8 @@ const { User, Team, Membership, Chore, Comment} = require('../models')
 
 const teamPage = async (req,res) => {
     const tid = req.params.id
+    const myname = req.session.user.username
+
         const chores = await Chore.findAll ({
             where: {
                 teamID: tid
@@ -44,6 +46,7 @@ const teamPage = async (req,res) => {
             users,
             tid,
             chores,
+            myname
             
         },
         ...layout

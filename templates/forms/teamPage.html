@@ -16,6 +16,16 @@ ${header}
 <ul>
   ${chores.map(el => `<li>${el.name} </li>`).join('')}
 </ul>
+<br><br>
+
+<form  method="POST">
+  <textarea name="comment" id="" cols="30" rows="10"></textarea>
+<button type="submit">Add Comment</button>
+</form>
+
+<ul>
+  <li>${comments} </li>
+</ul>
 </div>
 <br><br>
 ${footer}

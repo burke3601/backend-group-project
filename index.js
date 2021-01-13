@@ -6,7 +6,7 @@ const http = require('http')
 const express = require('express')
 const morgan = require("morgan")
 
-const { homeRouter, userRouter, listRouter, choreRouter, teamRouter } = require('./routers')
+const { homeRouter, userRouter, listRouter, choreRouter, teamRouter, commentRouter } = require('./routers')
 
 const logger = morgan("tiny")
 

@@ -2,14 +2,14 @@ const {layout} = require('../utils')
 const {Contact, User, Team} = require('../models')
 const {Chore} = require('../models');
 
-const choreShowForm = (req, res) => {
-    res.render('forms/createChore', {
-        locals: {
-            title: "Add new chore"
-        },
-        ...layout
-    });
-};
+// const choreShowForm = (req, res) => {
+//     res.render('forms/createChore', {
+//         locals: {
+//             title: "Add new chore"
+//         },
+//         ...layout
+//     });
+// };
 
 const choreProcessForm = async (req,res) => {
     const {chore} = req.body;
@@ -69,7 +69,7 @@ const test = (req,res) => {
 
 module.exports = {
     
-    choreShowForm,
+    
     choreProcessForm,
     test
 

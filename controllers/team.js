@@ -1,5 +1,5 @@
 const {layout} = require('../utils')
-const { User, Team, Membership, Chore} = require('../models')
+const { User, Team, Membership, Chore, Comment} = require('../models')
 //const {Team} = require('../models/team')
 
 //team controller
@@ -15,12 +15,34 @@ const teamPage = async (req,res) => {
             }
         })
     console.log(`*******${tid}************`)
-    console.log(`*******${chores.length}************`)
+    console.log(`$$$$$$$$$$$$$$$$`)
+    console.log(`*******${Object.keys(chores)}************`)
+
+    // const comments = []
+    // for(i = 0; i < chores.length; i++){
+    //     console.log(`*******${chores[i].id}************`)
+    //     const comment = await Comment.findOne ({
+    //         where: {
+    //             itemID: chores[i].id
+    //         }
+    //     }) 
+    //     comments.push(comment)
+    //     }
+    //    console.log('did we make it?')
+        
+
     const thisTeam = await Team.findOne({
         where:{
             id: tid
         }
     })
+
+    const comments = await Comment.findOne ({
+                where: {
+                    id: 3
+                }
+            }) 
+            console.log(comments)
 
     const userIds = await Membership.findAll({
         where:{
@@ -44,6 +66,8 @@ const teamPage = async (req,res) => {
     // })
     console.log(tid)
     //
+
+
     message = ''
     res.render('forms/teamPage', {
         locals: {
@@ -52,7 +76,8 @@ const teamPage = async (req,res) => {
             userIds,
             users,
             tid,
-            chores
+            chores,
+            comments
         },
         ...layout
     });

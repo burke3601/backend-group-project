@@ -5,8 +5,8 @@ const  choreControllers  = require('../controllers/chore')
 
 
  
-    router.get('/', choreControllers.choreList)
-    router.get('/new', choreControllers.choreShowForm)
-    router.post('/new', choreControllers.choreProcessForm)
-
+    //router.get('/', choreControllers.choreList)
+   // router.get('/new', choreControllers.choreShowForm)
+    //router.post('/', choreControllers.choreProcessForm)
+    // router.get('/members-only/:id/chores', choreControllers.test)
 module.exports = router

@@ -13,11 +13,8 @@ ${header}
     <textarea name="chore" id="" cols="30" rows="10"></textarea>
   <button type="submit">Add Chore</button>
 </form>
-<ul>
-  ${chores.map(el => `<li>${el.name} </li>`).join('')}
-</ul>
-<br><br>
 
+<<<<<<< HEAD
 <form  method="POST">
   <textarea name="comment" cols="30" rows="10"></textarea>
 <button type="submit">Add Comment</button>
@@ -27,5 +24,24 @@ ${header}
   <li>${comments.post} </li>
 </ul>
 </div>
+=======
+${chores.map(chore => `
+  <div>
+    <ul>
+     <li>${chore.name}</li>
+    <ul>
+      ${
+      chore.Comments.map(c =>`<li> ${c.post}</li>`).join('')}
+    </ul>
+    <form  method="POST">
+      <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+      <input type="hidden" name="itemID" value="${chore.id}">
+    <button type="submit">Add Comment</button>
+    </form>
+  </div>
+  <hr>
+  `).join('')}
+>>>>>>> main
 <br><br>
 ${footer}
+

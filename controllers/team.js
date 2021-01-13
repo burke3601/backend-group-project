@@ -12,7 +12,8 @@ const teamPage = async (req,res) => {
         const chores = await Chore.findAll ({
             where: {
                 teamID: tid
-            }
+            },
+            include: Comment
         })
     console.log(`*******${tid}************`)
     console.log(`$$$$$$$$$$$$$$$$`)
@@ -37,12 +38,14 @@ const teamPage = async (req,res) => {
         }
     })
 
-    const comments = await Comment.findOne ({
-                where: {
-                    id: 3
-                }
-            }) 
-            console.log(comments)
+    const comments = await Comment.findAll (
+        // {
+        //         where: {
+        //             id: 4
+        //         }
+        //     }
+            ) 
+            //console.log(comments)
 
     const userIds = await Membership.findAll({
         where:{
@@ -59,12 +62,12 @@ const teamPage = async (req,res) => {
         users.push(user)
         
     }
-    console.log(`*********${users[2].username}********`)
+   // console.log(`*********${users[2].username}********`)
     // console.log(userIds)
     // const newChore = await Chore.create({
 
     // })
-    console.log(tid)
+    //console.log(tid)
     //
 
 
@@ -77,7 +80,7 @@ const teamPage = async (req,res) => {
             users,
             tid,
             chores,
-            comments
+            
         },
         ...layout
     });

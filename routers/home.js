@@ -4,4 +4,6 @@ const { homeControllers } = require('../controllers')
 
 router.get('/', homeControllers.homePage)
 
+router.get('/about', homeControllers.aboutPage)
+
 module.exports = router

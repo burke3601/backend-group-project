@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Chore.hasMany(models.Comment,{
-        foreignKey: 'itemID'
+        foreignKey: 'itemID',
+        onDelete: 'CASCADE'
     })
    }
   };

@@ -16,8 +16,12 @@ const choreProcessForm = async (req,res) => {
     res.redirect(`${req.baseUrl}/${tid}`)
    
 }
+const deleteChore = async (req, res) =>{
+    
+}
 
 module.exports = {
-    choreProcessForm
+    choreProcessForm,
+    deleteChore
 };
 

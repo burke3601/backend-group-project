@@ -5,13 +5,13 @@ const { User, Team, Membership, Chore, Comment} = require('../models')
 
 const teamPage = async (req,res) => {
     const tid = req.params.id
-    
     const chores = await Chore.findAll ({
         where: {
-            teamID: tid
+            teamID: tid,
         },
         include: Comment
-    })
+    })  
+    //console.log(`$$$$$$$${chores[0].Comment.dataValues.createdAt}`)
 
     const thisTeam = await Team.findOne({
         where:{

@@ -9,10 +9,11 @@ const teamPage = async (req,res) => {
     
     const chores = await Chore.findAll ({
         where: {
-            teamID: tid
+            teamID: tid,
         },
         include: Comment
-    })
+    })  
+    //console.log(`$$$$$$$${chores[0].Comment.dataValues.createdAt}`)
 
 
     const thisTeam = await Team.findOne({

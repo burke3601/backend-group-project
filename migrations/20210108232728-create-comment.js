@@ -24,6 +24,9 @@ module.exports = {
       },
       post: {
         type: Sequelize.STRING
+      },
+      username: {
+        type: Sequelize.STRING
       }
     });
   },

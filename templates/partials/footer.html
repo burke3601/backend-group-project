@@ -16,7 +16,8 @@
     const toggleArray =  document.querySelectorAll('[data-toggle]')
     console.log(toggleArray)
     toggleArray.forEach(element => {
-        element.addEventListener('click',toggle_visibility);
+       // element.classList.toggle("hidden");
+        element.addEventListener('click', ()=>element.classList.toggle("hidden"));
     });
 
 </script>

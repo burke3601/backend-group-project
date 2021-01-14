@@ -17,21 +17,22 @@ ${header}
 ${chores.map(chore => `
   <div>
     <ul>
-     <li>${chore.name} with ID: ${chore.id}</li>
+     <li>${chore.name}</li>
 
       
-       
-       
+      <li><a href="#" data-toggle="${chore.id}">${chore.name} -- ${chore.createdAt.toString().slice(4,21)}</a><form action="${tid}/deleteChore" method="POST"></form><button type="submit">Delete this chore</button></form></li>
+    
+     <div id="${chore.id}" class= "hidden" style="display: none;">
           <ul>
           ${
-          chore.Comments.map(c =>`<li> ${c.username} ~ ${c.post} </li>`).join('')}
+          chore.Comments.map(c => `<li> ${c.username} ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
             <form action="${tid}/comment" method="POST">
               <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
               <input type="hidden" name="itemID" value="${chore.id}">
               <button type="submit">Add Comment</button>
             </form>
           </ul>
-        
+        </div>
       </ul>
 
   </div>

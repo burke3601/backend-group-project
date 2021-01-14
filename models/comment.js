@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'itemID'
       }),
       Comment.belongsTo(models.User,{
-        foreignKey: 'userID'
+        foreignKey: 'userID',
+        foreignKey: 'username'
       })
     }
   };
@@ -30,7 +31,8 @@ module.exports = (sequelize, DataTypes) => {
       references: 'User',
       key: 'id'
     },
-    post: DataTypes.STRING
+    post: DataTypes.STRING,
+    username: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Comment',

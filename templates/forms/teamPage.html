@@ -1,7 +1,7 @@
 ${header}
 <div class="container">
 
-<h1>welcome to ${thisTeam.name} Team </h1>
+<h1>welcome to ${thisTeam.name} Team  </h1>
 
 <h2>Here are the members of this team</h2>
  <ul>
@@ -18,18 +18,24 @@ ${chores.map(chore => `
   <div>
     <ul>
      <li>${chore.name} with ID: ${chore.id}</li>
-    <ul>
-      ${
-      chore.Comments.map(c =>`<li> ${c.post}</li>`).join('')}
-    </ul>
-    <form action="${tid}/comment" method="POST">
-      <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
-      <input type="hidden" name="itemID" value="${chore.id}">
-    <button type="submit">Add Comment</button>
-    </form>
+      
+       
+       
+          <ul>
+          ${
+          chore.Comments.map(c =>`<li> ${c.username} ~ ${c.post} </li>`).join('')}
+            <form action="${tid}/comment" method="POST">
+              <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+              <input type="hidden" name="itemID" value="${chore.id}">
+              <button type="submit">Add Comment</button>
+            </form>
+          </ul>
+        
+      </ul>
   </div>
   <hr>
   `).join('')}
 <br><br>
+
 ${footer}
 

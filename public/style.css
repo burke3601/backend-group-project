@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+body{
+    background-color: darkslategray;
+    font: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container {
+    display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  
+  background-color: darkslategray;
+  color: whitesmoke;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+ 
+}
+.hidden {
+    display: none;
+}
+.item { 
+    
+    border: dashed;
+ }
+.item1 { 
+    
+    border: dashed; 
+}
+.item2 { 
+    border: dashed;  
+}
+.item3 { 
+    border: dashed; 
+}
+.item4 { 
+    border: dashed; 
+}
+.item5 { 
+    border: dashed; 
+}
+.item6 { 
+    border: dashed; 
+}
+.chorecard {
+    border: dashed;
+    border-color: red;
+}

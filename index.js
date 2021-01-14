@@ -1,4 +1,5 @@
 require('dotenv').config();
+var path = require('path')
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
@@ -19,14 +20,18 @@ app.use(logger)
 const port = 3030
 const host = 'localhost'
 
-// app.use(express.static("public"))
 
-app.use(express.urlencoded({extended:true}))
+
+
 // Needed for Templates 
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
+
+app.use('/static', express.static(__dirname + "/public"))
+
+app.use(express.urlencoded({extended:true}))
 
 app.use(session({
     store: new FileStore(), // no options for now

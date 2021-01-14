@@ -54,7 +54,7 @@ const processLogin = async (req, res) => {
         }
     })
 
-    if (user) {
+    if (user && password) {
         console.log(`PROCESSLOGIN: Valid User....processing password`);
 
         const isValid = bcrypt.compareSync(password, user.hash)
@@ -70,10 +70,11 @@ const processLogin = async (req, res) => {
             req.session.save(() => {
                 res.redirect(`/members-only/userhome`)
             })
-        }
+        
     } else {
         console.log(`NOT VALID USER`);
         res.redirect(`/`)
+        }
     }
 }
 

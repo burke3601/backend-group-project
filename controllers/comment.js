@@ -6,21 +6,18 @@ const {Comment} = require('../models');
 
 const processComment = async (req,res) => {
     const {comment , itemID} = req.body;
-    
-    console.log(req.params);
     const username = req.session.user.username
-   
     const tid = req.params.id
+    
         const newComment = await Comment.create({
             post: comment,
             itemID,
             userID: req.session.user.id,
-            username
-
+            username,  
         });
         console.log("in comment ProcessForm");
         res.redirect(`${req.baseUrl}/${tid}`)
-
+        
     }
 
 

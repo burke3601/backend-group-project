@@ -5,14 +5,16 @@ const { User, Team, Membership, Chore, Comment} = require('../models')
 
 const teamPage = async (req,res) => {
     const tid = req.params.id
-    const myname = req.session.user.username
 
-        const chores = await Chore.findAll ({
-            where: {
-                teamID: tid
-            },
-           include: Comment
-        })
+    
+    const chores = await Chore.findAll ({
+        where: {
+            teamID: tid,
+        },
+        include: Comment
+    })  
+    //console.log(`$$$$$$$${chores[0].Comment.dataValues.createdAt}`)
+
 
     const thisTeam = await Team.findOne({
         where:{
@@ -36,8 +38,8 @@ const teamPage = async (req,res) => {
         users.push(user)
         
     }
-  
-    message = ''
+    
+    
     res.render('forms/teamPage', {
         locals: {
             title: "Add new chore",

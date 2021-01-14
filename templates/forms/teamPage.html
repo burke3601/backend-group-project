@@ -1,35 +1,81 @@
+
 ${header}
 <div class="container">
 
-<h1>welcome to ${thisTeam.name} Team </h1>
+  <div class="item1">
+      <h1>welcome to ${thisTeam.name} Team  </h1>
 
-<h2>Here are the members of this team</h2>
- <ul>
-    ${users.map(el => `<li>${el.username} </li>`).join('')}
- </ul>
+      <h2>Here are the members of this team</h2>
 
+  </div>
 
-<form action="${tid}/chore"  method="POST">
-    <textarea name="chore" id="" cols="30" rows="10"></textarea>
-  <button type="submit">Add Chore</button>
-</form>
-
-${chores.map(chore => `
-  <div>
+  <div class="item2">
     <ul>
-     <li>${chore.name} with ID: ${chore.id}</li>
-    <ul>
-      ${
-      chore.Comments.map(c =>`<li> ${myname}: ${c.post}</li>`).join('')}
-    </ul>
-    <form action="${tid}/comment" method="POST">
-      <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
-      <input type="hidden" name="itemID" value="${chore.id}">
-    <button type="submit">Add Comment</button>
+
+      ${users.map(el => `<li>${el.username} </li>`).join('')}
+   </ul>
+  </div>
+
+     <li>${chore.name}</li>
+
+      
+      <li><a href="#" data-toggle="${chore.id}">${chore.name} -- ${chore.createdAt.toString().slice(4,21)}</a><form action="${tid}/deleteChore" method="POST"></form><button type="submit">Delete this chore</button></form></li>
+    
+     <div id="${chore.id}" class= "hidden" style="display: none;">
+          <ul>
+          ${
+          chore.Comments.map(c => `<li> ${c.username} ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
+            <form action="${tid}/comment" method="POST">
+              <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+              <input type="hidden" name="itemID" value="${chore.id}">
+              <button type="submit">Add Comment</button>
+            </form>
+          </ul>
+        </div>
+      </ul>
+
+
+  <div class="item3">
+    <form action="${tid}/chore"  method="POST">
+        <textarea name="chore" id="" cols="30" rows="10"></textarea>
+      <button type="submit">Add Chore</button>
     </form>
   </div>
+
+  <div class="item4">
+      ${chores.map(chore => `
+        
+          <ul>
+          <li>${chore.name} with ID: ${chore.id}</li>
+
+  
+            
+            
+                <ul class="chorecard">
+                ${
+                chore.Comments.map(c =>`<li> ${c.username} ~ ${c.post} </li>`).join('')}
+                  <form action="${tid}/comment" method="POST">
+                    <textarea name="comment" id="" cols="30" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+                    <input type="hidden" name="itemID" value="${chore.id}">
+                    <button type="submit">Add Comment</button>
+                  </form>
+                </ul>
+              
+            </ul>
+          
+    
+  
   <hr>
   `).join('')}
-<br><br>
+  </div>  
+
+  <br><br>
+    <div class="item6">
+        <p>Want to go back to the User Page?</p>
+        <a href="#" onclick="history.go(-1)">Go Back to User Page</a>
+    </div>
+
+
+</div>
 ${footer}
 

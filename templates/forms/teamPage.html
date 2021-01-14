@@ -17,6 +17,8 @@ ${header}
 ${chores.map(chore => `
   <div>
     <ul>
+     <li>${chore.name}</li>
+
       
       <li><a href="#" data-toggle="${chore.id}">${chore.name} -- ${chore.createdAt.toString().slice(4,21)}</a><form action="${tid}/deleteChore" method="POST"></form><button type="submit">Delete this chore</button></form></li>
     
@@ -32,6 +34,7 @@ ${chores.map(chore => `
           </ul>
         </div>
       </ul>
+
   </div>
   <hr>
   `).join('')}

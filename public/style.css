@@ -47,3 +47,7 @@ body{
     border: dashed;
     border-color: red;
 }
+
+.mx-auto {
+    background: tan;
+}

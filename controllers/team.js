@@ -48,7 +48,6 @@ const teamPage = async (req,res) => {
             users,
             tid,
             chores,
-            myname
             
         },
         ...layout

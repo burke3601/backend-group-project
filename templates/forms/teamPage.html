@@ -9,6 +9,12 @@ ${header}
 
   </div>
 
+
+${chores.map(chore => `
+  <div>
+    <ul>    
+      <li><a href="#" data-toggle="${chore.id}">${chore.name} -- ${chore.createdAt.toString().slice(4,21)}</a><form action="${chore.id}/${tid}/deleteChore" method="POST"><button type="submit">Delete this chore</button></form></li>
+
   <div class="item2">
     <ul>
 
@@ -20,8 +26,9 @@ ${header}
 
       
       <li><a href="#" data-toggle="${chore.id}">${chore.name} -- ${chore.createdAt.toString().slice(4,21)}</a><form action="${tid}/deleteChore" method="POST"></form><button type="submit">Delete this chore</button></form></li>
+
     
-     <div id="${chore.id}" class= "hidden" style="display: none;">
+     <div id="${chore.id}" class= "hidden" >
           <ul>
           ${
           chore.Comments.map(c => `<li> ${c.username} ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}

@@ -63,7 +63,7 @@ const processTeam= async (req, res)=>{
                 name,
             })
             for(i = 0; i < checked.length; i++){
-            let member = await User.findOne({
+            const member = await User.findOne({
                 where: {
                     id: checked[i]
                 }

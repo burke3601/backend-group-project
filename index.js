@@ -29,7 +29,8 @@ app.engine('html', es6Renderer);
 app.set('views', 'templates');
 app.set('view engine', 'html');
 
-app.use('/static', express.static(__dirname + "/public"))
+ //app.use('/static', express.static(__dirname + "/public"))
+app.use(express.static("./public"))
 
 app.use(express.urlencoded({extended:true}))
 

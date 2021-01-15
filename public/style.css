@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
+
+
+
+
+
+
+@media (min-width:768px){
+}
+
+#brsu {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
 body{
+    text-align: center;
+    margin-top: 15%;
     background-color: darkslategray;
     font: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -50,4 +67,54 @@ body{
 
 .mx-auto {
     background: tan;
+}
+
+.contactUs {
+    margin-left: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.image {
+    padding: 0 0 0 150px;
+   max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+img {
+    height: 100%;
+    width: 50%;
+}
+
+.navbar-brand {
+    padding: 0 0 0 20px;
+ 
+}
+
+.navbar-item {
+    padding:0 15px 0 0;
+}
+
+.nav-item {
+    padding: 0 20px 0 0;;
+}
+
+h2 {
+    text-align: center;
+}
+
+.back-btn {
+    color: whitesmoke;
+    text-align: left;
+    margin-left: 20px;
+}
+.userhome {
+    background-color: darkslategrey;
+    color: whitesmoke
 }

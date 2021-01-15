@@ -63,6 +63,10 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+textarea{
+    border-radius: 1em;
+}
+
 
 .container {
     display: flex;
@@ -70,29 +74,38 @@ body{
   align-content: center;
   flex-direction: column;
   
-  
-  
-
-
- 
 }
 .hidden {
     display: none;
 }
-.item { 
-    
-    border: dashed;
- }
+
 .item1 { 
-   
-    border: dashed; 
+   background-color: burlywood;
+   border-radius: 2em;
+   margin: 3em;
+   flex-wrap: wrap;
+   padding: 3em;
+
+    
 }
 .item2 { 
+    background-color: rgba(56, 223, 209, 0.534);
     color: black;
-    border: dashed;  
+    border-radius: 10em;
+    margin: 3em;
+    flex-wrap: wrap;
+    padding: 2em;
+    
 }
 .item3 { 
-    border: dashed; 
+    background-color: rgb(204, 226, 104);
+    border-radius: 2em;
+    border-width: 1.5em;
+    border-style: solid;
+    border-color: cornsilk;
+    margin: 3em;
+    flex-wrap: wrap;
+    
 }
 .item4 { 
     border: dashed; 

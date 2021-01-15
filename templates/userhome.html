@@ -1,6 +1,10 @@
 ${header}
 
 
+      
+
+
+
 <div class="userhome">
   <h2>Welcome ${username}!</h2>
     <br><br>
@@ -18,14 +22,16 @@ ${header}
   
   
     <br>
+ 
+    
       <ul>
-        <a href="#" onclick="history.go(-1)">Go Back to Login</a>
-    <br>
-            <a href="newTeam">Create a New Team</a><br>
-           
-    ${teams.map(el =>`<a href="team/${el.id}">
-      <li>${el.name}</li></a><form action="${el.id}/deleteTeam" method="POST"><button type="submit" value="${el.id}">Delete this team</button></form>`).join('')}
+        ${teams.map(el =>`
+          <a class="a1" href="team/${el.id}">
+            <li class="no-button">${el.name}</li>
+          </a>
         
+        <form action="${el.id}/deleteTeam" method="POST">
+            <button type="submit" value="${el.id}">Delete this team</button></form>`).join('')}
       </ul>
     </div>
 <br><br><br>
@@ -42,5 +48,3 @@ ${header}
 ${footer}
 </div>
 
-
-${footer}

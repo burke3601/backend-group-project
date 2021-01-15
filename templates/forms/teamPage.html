@@ -5,11 +5,12 @@ ${header}
   <div class="item1">
     <h1>Welcome to ${thisTeam.name}!</h1>
 
-    <h2>Here are the members of this team</h2>
+    
 
   </div>
 
     <div class="item2">
+      <h2>Team Members</h2>
      
       <ul class="no-button">
           ${users.map(el => `<li>${el.username} </li>`).join('')}

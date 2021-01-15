@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="styleAbout.css" />
-  </head>
-  <body>
-      <div class="mx-auto" style="width: 600px">
+${header}
+<div class="container">
+  <div class="homepage">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="">Chore Super Star</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav" style="margin-left: auto;">
+                  <li class="navbar-item">
+                      <a class="nav-link" href="/contactUs">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="/about">About</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+<div class="container bg-primary text-dark">
+    <div class="item4" style=" justify-content: center;">
+       <img src="/images/hero2.png" alt="page logo">
+    </div>
+    <div class="item1">
       <h1>Welcome to the About Page</h1>
       <a class="navbar-item"
         href="about.html"></a>
-    
     </div>
-    <div class="about">
-      <p class="aboutHeader"></p>
-      <br><br>
-      <div class="about-logo">
-          <img src="images/hero2.png" alt="page logo">
+    <div class="item1">
+         
           <br><br>
-      </div>
-        <p class="aboutContent">Chore Super Star was developed and implemented by four passionate programmers in January of 2021. Chore Super Star is an interactive app that allows users to create chores and share those chores with other users in a team setting. This allows everyone from busy wives to construction managers, to keep track of who’s doing what chores </p>
-        <!-- <p class="aboutContent">Check out our app for your chore remindrs </p> -->
-        
-        <div class="search">
+          <p style="justify-content: center;">Chore Super Star was developed and implemented by four passionate programmers in January of 2021. Chore Super Star is an interactive app that allows users to create chores and share those chores with other users in a team setting. This allows everyone from busy wives to construction managers, to keep track of who’s doing what chores </p>
     </div>
+    <div>
     <br><br>
     <a href="#" onclick="history.go(-1)">Go Back</a>
-  </body>
-</html>
+  </div>
+</div>
+  ${footer}

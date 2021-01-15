@@ -1,14 +1,18 @@
 ${header}
+
 <div class="userhome">
 <h2>Welcome ${username} Team</h2>
 <br><br>
 
+
 <a href="newTeam">Create a New Team</a><br><br>
 <label for="Teams">View your current Teams</label><br>
 <ul>
-  ${teams.map(el =>`<a href="team/${el.id}"><li>${el.name}</li></a>`).join('')}
+  ${teams.map(el =>`<a href="team/${el.id}">
+    <li>${el.name}</li></a>`).join('')}
 </ul>
 <br><br><br>
+
 <div class="back-btn">
 <a href="#" onclick="history.go(-1)">Go Back to Login</a>
 </div>
@@ -18,3 +22,4 @@ ${header}
 <br><br>
 ${footer}
 </div>
+

@@ -17,7 +17,15 @@ const choreProcessForm = async (req,res) => {
    
 }
 const deleteChore = async (req, res) =>{
-    
+    const tid = req.params.id
+        const { choreID } = req.params
+        console.log(`$$$$$$$$${tid}$$$$$$$$${choreID}`)
+        const deletedChore = await Chore.destroy({
+            where:{
+                id: choreID
+            }
+        })
+        res.redirect(`${req.baseUrl}/${tid}`)
 }
 
 module.exports = {

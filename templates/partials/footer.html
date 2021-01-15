@@ -2,11 +2,11 @@
        
     function toggle_visibility(evt) {
         evt.preventDefault()
-        console.log(evt.currentTarget)
+        //console.log(evt.currentTarget)
        var id = evt.currentTarget.getAttribute('data-toggle');
-       console.log(id)
+       //console.log(id)
        var e = document.getElementById(id);
-       console.log(e)
+       //console.log(e)
        if(e.style.display == 'none')
           e.style.display = 'block';
        else

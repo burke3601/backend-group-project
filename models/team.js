@@ -10,9 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-     
-    }
+      Team.hasMany(models.Chore,{
+        foreignKey: 'teamID',
+        onDelete: 'CASCADE'
+    })
+   }
   };
+  
   
   Team.init({
     name: DataTypes.STRING,

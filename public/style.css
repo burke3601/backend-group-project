@@ -3,7 +3,7 @@
 
 
 
-
+/* 
 
 
 @media (min-width:768px){
@@ -65,7 +65,7 @@ body{
 
 
 .container {
-    display: flex;
+   display: flex;
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
@@ -79,6 +79,7 @@ body{
 .hidden {
     display: none;
 }
+
 .item { 
     
     border: dashed;
@@ -153,7 +154,11 @@ h2 {
 }
 
 .back-btn {
+    font-size: 1.2em;
+    font-family: 'Fredoka One', cursive;
     color: whitesmoke;
     text-align: left;
     margin-left: 20px;
 }
+
+

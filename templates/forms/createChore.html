@@ -5,6 +5,22 @@ ${header}
   <label for="chore">
     <input name="name" type="text" placeholder="Enter your new chore" required />
   </label>
+  <label for="teamID">
+    <select name="teamID">
+        ${
+            teamID.map(t => `
+    
+                <option value="${teamID.id}">
+                    ${name}
+                </option>
+            
+            
+            `).join('')
+        }
+    </select>
+    <br><br>
+    <input name="teamID" type="text" >
+  </label>
   <button type="submit">Submit</button>
 </form>
 </div>

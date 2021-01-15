@@ -12,8 +12,32 @@ const homePage = (req, res)=>{
     })
 }
 
+
+const aboutPage = (req, res)=>{
+    
+    res.render('about', {
+        ...layout,
+        locals:{
+            title: 'aboutpage'
+        }
+    })
+}
+
+
+const contactUsPage = (req, res)=>{
+    
+    res.render('contactUs', {
+        ...layout,
+        locals:{
+            title: 'contactUspage'
+        }
+    })
+}
+
 // const listPage = (req, res)=>
 
 module.exports = {
-    homePage
+    homePage,
+    aboutPage,
+    contactUsPage
 }

@@ -26,10 +26,11 @@ module.exports = (sequelize, DataTypes) => {
       references: 'Team',
       key: 'id'
     }
-  }, 
-     {
-    sequelize,
-    modelName: 'Membership',
+  },
+    {
+      sequelize,
+      modelName: 'Membership',
+    
   });
   return Membership;
 };

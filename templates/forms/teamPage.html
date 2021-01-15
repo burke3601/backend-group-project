@@ -1,7 +1,11 @@
 
 ${header}
 <div class="container bg-primary text-dark">
-
+  <div class="item4">
+      
+    <img src="/images/hero2.png" alt="page logo">
+  
+</div>
   <div class="item1">
     <h1>Welcome to ${thisTeam.name}!</h1>
 
@@ -23,7 +27,7 @@ ${header}
         <br>
           <textarea name="chore" id="" cols="20" rows="10"></textarea>
           <br>
-        <button type="submit">Add Chore</button>
+        <button class="button big blue" type="submit">Add Chore</button>
       </form>
       <br>
       <p>Click on the chore name to add a comment!</p>
@@ -34,7 +38,7 @@ ${header}
             <a style="font-size: 1.4em;" class="a1" href="#" data-toggle="${chore.id}"><b>${chore.name}</b> 
               <br> <i>${chore.createdAt.toString().slice(4,21)}</i></a>
               <form action="${chore.id}/${tid}/deleteChore" method="POST">
-            <button type="submit">Delete this chore</button></form>
+            <button class="button big blue" type="submit">Delete this chore</button></form>
           </li>
           
           <div id="${chore.id}" class= "hidden" >
@@ -44,11 +48,14 @@ ${header}
                     <br>
                     ${
                     chore.Comments.map(c => ` 
-                    <li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
+                    <div class="item7">
+                      <div>
+                    <li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li></div></div>`).join('')}
                       <form action="${tid}/comment" method="POST">
-                        <textarea name="comment" id="" cols="20" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+                        <br><textarea name="comment" id="" cols="20" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
                         <input  type="hidden" name="itemID" value="${chore.id}">
-                        <button type="submit">Add Comment</button>
+                        <br>
+                        <button class="button big blue" type="submit">Add Comment</button>
                       </form>
                 </div>
                 </ul>

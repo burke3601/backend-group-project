@@ -1,3 +1,74 @@
+# Super Duper Chores Pages
+
+## Description
+A simple app that allows users to create and track team chores and tasks.
+
+## Application
+Users sign up by supplying a unique username and a password. Once registered, users create teams with fellow registered users. From their individual page, each user will be able to navigate their different teams. Each team renders a specific team page where users can create and comment on shared chores. After the chore is completed, the user has the option to remove the chore from their to do list.
+
+## Demo
+<h3>Login<h3>
+<img src=".readme-images/login-readme.png">
+
+<br>
+<br>
+
+
+<h3>Login<h3>
+
+<br>
+<br>
+
+<h3>Create User<h3>
+
+<br>
+<br>
+
+<h3><h3>
+
+<br>
+<br>
+
+<h3><h3>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## user 
         --> hasMany 
             - teams 

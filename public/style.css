@@ -41,6 +41,11 @@
     color: whitesmoke;
 }
 
+button{
+    border-radius: 3em;
+    background-color:rgb(122, 175, 245);
+}
+
 .image2 {
     padding: 0 0 0 150px;
    max-height: 100%;
@@ -65,6 +70,7 @@ body{
 
 textarea{
     border-radius: 1em;
+
 }
 
 
@@ -85,6 +91,8 @@ textarea{
    margin: 3em;
    flex-wrap: wrap;
    padding: 3em;
+   align-items: center;
+    justify-content: center;
 
     
 }
@@ -95,6 +103,8 @@ textarea{
     margin: 3em;
     flex-wrap: wrap;
     padding: 2em;
+    align-items: center;
+    justify-content: center;
     
 }
 .item3 { 
@@ -105,12 +115,14 @@ textarea{
     border-color: cornsilk;
     margin: 3em;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     
 }
 .item4 { 
     align-items: center;
     justify-content: center;
-    background-color: rgb(204, 226, 104);
+    background-color: rgb(221, 235, 162);
     border-radius: 40%;
     border-width: 1; 
     border-style: solid;
@@ -119,10 +131,23 @@ textarea{
 
 }
 .item5 { 
-    border: dashed; 
+    background-color: rgba(56, 223, 209, 0.534);
+    color: black;
+    border-radius: 3em;
+    margin: 3em;
+    flex-wrap: wrap;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
 }
 .item6 { 
-    border: dashed; 
+    background-color: rgb(125, 150, 219);
+    border-radius: 1em;
+    border-width: 1em;
+    border-style: solid;
+    border-color:  #0d6efd!important;;
+    margin: 3em;
+    flex-wrap: wrap;
 }
 .chorecard {
     border: dashed;

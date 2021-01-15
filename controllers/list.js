@@ -16,22 +16,19 @@ const listPage = async(req, res)=>{
     }) 
         let teams = []
         for(i = 0; i < members.length; i++){
-        const team = await Team.findOne({
-            where:{
-                id: members[i].teamID
+            
+            const team = await Team.findOne({
+                where:{
+                    id: members[i].teamID
+                }
+            })
+            if (team){
+                console.log(team)
+                teams.push(team)
             }
-        })
-        teams.push(team)
-        // console.log(team)
-        // console.log(Object.keys(teams[0]))
-        // console.log(teams[0].name)
-        // console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-        //console.log(members)
+        
     }
-    // console.log(members[0])
-    // console.log("$%$%$%$%$%$%")
-    // console.log(teams[0])
-   
+  
     res.render("userhome", {
         ...layout,
         locals: {
@@ -63,6 +60,20 @@ const newTeam = async (req, res)=>{
         })
     }
 }
+
+const deleteTeam = async (req, res) =>{
+        const tid = req.params.id
+        console.log(`&^%$%^&*&^%$^&^%${tid}-------------`)
+        const deletedTeam = await Team.destroy({
+            where:{
+                id: tid
+            }
+        })
+        res.redirect(`${req.baseUrl}/userhome`)
+}
+
+
+
 // && phone && id && email && address
 const processTeam= async (req, res)=>{
     console.log('processing contact')
@@ -117,6 +128,7 @@ module.exports = {
     listPage,
     newTeam,
     processTeam,
+    deleteTeam
 }
 
 

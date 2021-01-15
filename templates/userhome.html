@@ -1,25 +1,18 @@
 ${header}
 
-<div class="userhome">
-<h2>Welcome ${username}</h2>
-<br><br>
+                        <div class="container-fluid">
+                        <h2>Welcome ${username}</h2>
+                      </div>
+<nav>
+  <ul>
+    
+    <a href="#" onclick="history.go(-1)">Go Back to Login</a>
+    <br>
+            <a href="newTeam">Create a New Team</a><br>
+           
+    ${teams.map(el =>`<a href="team/${el.id}">
+      <li>${el.name}</li></a><form action="${el.id}/deleteTeam" method="POST"><button type="submit" value="${el.id}">Delete this team</button></form>`).join('')}
+  </ul>
+</nav>
 
-
-<a href="newTeam">Create a New Team</a><br><br>
-<label for="Teams">View your current Teams</label><br>
-<ul>
-  ${teams.map(el =>`<a href="team/${el.id}">
-    <li>${el.name}</li></a>`).join('')}
-</ul>
-<br><br><br>
-
-<div class="back-btn">
-<a href="#" onclick="history.go(-1)">Go Back to Login</a>
-</div>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
 ${footer}
-</div>
-

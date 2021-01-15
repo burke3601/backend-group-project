@@ -161,4 +161,14 @@ h2 {
     margin-left: 20px;
 }
 
+.about-logo {
+    display: flex;
+    margin-left: 50%;
+}
+
+.aboutContent {
+    margin-left: 30%;
+    font-size: large;
+    
+}
 

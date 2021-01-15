@@ -6,4 +6,6 @@ router.get('/', homeControllers.homePage)
 
 router.get('/about', homeControllers.aboutPage)
 
+router.get('/contactUs', homeControllers.contactUsPage)
+
 module.exports = router

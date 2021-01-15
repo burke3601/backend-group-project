@@ -7,7 +7,7 @@ ${header}
         </label>
         <h3>Now add all the people you want to help you out with the chores!!!</h3>
         <ul>
-            ${contacts.map(el => `<li>${el.username}, ${el.id}  <input type="checkbox" name="checked" id="${el.username}"  ></li>`).join('')}
+            ${contacts.map(el => `<li>${el.username}  <input type="checkbox" name="checked" value="${el.id}"  ></li>`).join('')}
         </ul>
         <button type="submit">submit</button>
     </form>

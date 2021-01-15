@@ -33,15 +33,17 @@ ${header}
           </li>
           
           <div id="${chore.id}" class= "hidden" >
+
                 <ul class="no-button">
-                  
-                ${
-                chore.Comments.map(c => `<li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
-                  <form action="${tid}/comment" method="POST">
-                    <textarea name="comment" id="" cols="20" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
-                    <input  type="hidden" name="itemID" value="${chore.id}">
-                    <button type="submit">Add Comment</button>
-                  </form>
+                  <div class="commentContainer">
+                    ${
+                    chore.Comments.map(c => `<li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
+                      <form action="${tid}/comment" method="POST">
+                        <textarea name="comment" id="" cols="20" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
+                        <input  type="hidden" name="itemID" value="${chore.id}">
+                        <button type="submit">Add Comment</button>
+                      </form>
+                </div>
                 </ul>
               </div>
             </ul>

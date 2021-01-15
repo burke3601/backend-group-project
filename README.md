@@ -1,4 +1,4 @@
-# Super Duper Chores Pages
+# Super Duper Chores
 
 
 ## Description

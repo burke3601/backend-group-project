@@ -19,12 +19,12 @@ Users sign up by supplying a unique username and a password. Once registered, us
 <br>
 
 
-<h3>Login<h3>
-
-<br>
-<br>
-
 <h3>Create User<h3>
+
+<br>
+<br>
+
+<h3>Create Team<h3>
 
 <br>
 <br>

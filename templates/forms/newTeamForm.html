@@ -1,16 +1,28 @@
 ${header}
-<div class="container">
-    <h2>Add a name to your team</h2>
-    <form action="/members-only/userhome/newTeam" method="POST">
-        <label for="name">
-            <input name = "name" type="text" placeholder="name" required>
-        </label>
-        <h3>Now add all the people you want to help you out with the chores!!!</h3>
-        <ul>
-            ${contacts.map(el => `<li>${el.username}  <input type="checkbox" name="checked" value="${el.id}"  ></li>`).join('')}
-        </ul>
-        <button type="submit">submit</button>
-    </form>
-</div><br><br><br>
+<div class="container bg-primary text-dark">
+    
+    <div class="item1">
+        <h1>Add a name to your team</h1>
+        <form action="/members-only/userhome/newTeam" method="POST">
+            <label for="name">
+                <input name = "name" type="text" placeholder="name" required>
+            </label>
+
+    </div>
+
+    <div class="item2">
+       
+            
+            <h3>Now add all the people you want to help you out with the chores!!!</h3>
+    </div>
+            <div class="item3">   
+                    <ul class="no-button">
+                        ${contacts.map(el => `<li>${el.username}  <input type="checkbox" name="checked" value="${el.id}"  ></li>`).join('')}
+                    </ul>
+                    <button type="submit">submit</button>
+                </form>
+             </div>
+</div>
+<br><br><br>
 ${footer}
 

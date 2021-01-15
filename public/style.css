@@ -23,7 +23,7 @@
 }
 .uh1 {
     align-content: center;
-    border: dashed;
+    
 }
 
 .uh2 {
@@ -108,7 +108,15 @@ textarea{
     
 }
 .item4 { 
-    border: dashed; 
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(204, 226, 104);
+    border-radius: 40%;
+    border-width: 1; 
+    border-style: solid;
+    margin: 1em;
+    border-color: cornsilk;
+
 }
 .item5 { 
     border: dashed; 
@@ -143,10 +151,10 @@ p {
     max-width: 100%;
     object-fit: contain;
 }
-img {
+/* img {
     height: 100%;
     width: 50%;
-}
+} */
 
 .navbar-brand {
     padding: 0 0 0 20px;

@@ -8,7 +8,7 @@ Users sign up by supplying a unique username and a password. Once registered, us
 
 ## Demo
 <h3>Login<h3>
-<img src=".readme-images/login-readme.png">
+<img src="./readme-images/login-readme.png">
 
 <br>
 <br>

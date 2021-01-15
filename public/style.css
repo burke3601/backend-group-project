@@ -9,6 +9,46 @@
 @media (min-width:768px){
 }
 
+/* Index HTML with Flexbox */
+
+
+/* Userhome */
+.userhome {
+   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.uh1 {
+    align-content: center;
+    border: dashed;
+}
+
+.uh2 {
+    border: dashed;
+    flex-direction: row;
+    font: white;
+}
+
+.no-button {
+    list-style-type: none;
+    color: white;
+}
+
+.a1 {
+    color: whitesmoke;
+}
+
+.image2 {
+    padding: 0 0 0 150px;
+   max-height: 100%;
+    max-width: 100%;
+    /* object-fit: contain; */
+
+}
+
 #brsu {
     display: flex;
     justify-content: center;
@@ -22,15 +62,17 @@ body{
     font: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+
 .container {
     display: flex;
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
   
-  background-color: darkslategray;
-  color: whitesmoke;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  
+
 
  
 }
@@ -42,10 +84,11 @@ body{
     border: dashed;
  }
 .item1 { 
-    
+   
     border: dashed; 
 }
 .item2 { 
+    color: black;
     border: dashed;  
 }
 .item3 { 
@@ -113,8 +156,4 @@ h2 {
     color: whitesmoke;
     text-align: left;
     margin-left: 20px;
-}
-.userhome {
-    background-color: darkslategrey;
-    color: whitesmoke
 }

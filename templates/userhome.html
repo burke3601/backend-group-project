@@ -1,25 +1,50 @@
 ${header}
 
+
+      
+
+
+
 <div class="userhome">
-<h2>Welcome ${username}</h2>
-<br><br>
+  <h2>Welcome ${username}!</h2>
+    <br><br>
+   
+    <div class="image">
+      <img src="/images/hero2.png" alt="page logo">
+    </div>
+    
+  <div class="uh1 container bg-primary text-dark">
 
-
-<a href="newTeam">Create a New Team</a><br><br>
-<label for="Teams">View your current Teams</label><br>
-<ul>
-  ${teams.map(el =>`<a href="team/${el.id}">
-    <li>${el.name}</li></a>`).join('')}
-</ul>
+    <p>Create a new team <a class="a1" href="newTeam">HERE!</a></p>
+    
+    
+    <label for="Teams">View your current Teams</label>
+  
+  
+    <br>
+ 
+    
+      <ul>
+        ${teams.map(el =>`
+          <a href="team/${el.id}">
+            <li>${el.name}</li>
+          </a>
+        
+        <form action="${el.id}/deleteTeam" method="POST">
+            <button type="submit" value="${el.id}">Delete this team</button></form>`).join('')}
+      </ul>
+    </div>
 <br><br><br>
 
-<div class="back-btn">
-<a href="#" onclick="history.go(-1)">Go Back to Login</a>
-</div>
+    <div class="back-btn">
+      <a href="#" onclick="history.go(-1)">Go Back to Login</a>
+    </div>
+    
 <br><br>
 <br><br>
 <br><br>
 <br><br>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 ${footer}
 </div>
 

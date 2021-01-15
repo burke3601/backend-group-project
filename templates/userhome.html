@@ -5,24 +5,27 @@ ${header}
 
 
 
-<div class="userhome">
-  <h2>Welcome ${username}!</h2>
-    <br><br>
-   
-    <div class="image">
+<div class="container  bg-primary text-dark">
+ 
+    <div class="item4">
+      
       <img src="/images/hero2.png" alt="page logo">
+    
+  </div>
+  <div class="item1">
+    <h1>Welcome ${username}!</h1>
+      <br>
     </div>
     
-  <div class="uh1 container bg-primary text-dark">
+  <div class="item2">
 
     <p>Create a new team <a class="a1" href="newTeam">HERE!</a></p>
     
-    
+  </div>
+  <div class="item3">
     <label for="Teams">View your current Teams</label>
   
-  
     <br>
- 
     
       <ul>
         ${teams.map(el =>`

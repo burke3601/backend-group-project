@@ -19,16 +19,20 @@ ${header}
 
   <div class="item3">
       <form action="${tid}/chore"  method="POST">
+        <br>
+        <br>
           <textarea name="chore" id="" cols="20" rows="10"></textarea>
+          <br>
         <button type="submit">Add Chore</button>
       </form>
       <br>
       <p>Click on the chore name to add a comment!</p>
       ${chores.map(chore => `
-        <div>
+        <div class="item5">
           <ul class="no-button">
           <li >
-            <a style="font-size: 1.4em;" class="a1" href="#" data-toggle="${chore.id}"><b>${chore.name}</b> <i>${chore.createdAt.toString().slice(4,21)}</i></a>
+            <a style="font-size: 1.4em;" class="a1" href="#" data-toggle="${chore.id}"><b>${chore.name}</b> 
+              <br> <i>${chore.createdAt.toString().slice(4,21)}</i></a>
               <form action="${chore.id}/${tid}/deleteChore" method="POST">
             <button type="submit">Delete this chore</button></form>
           </li>
@@ -36,9 +40,11 @@ ${header}
           <div id="${chore.id}" class= "hidden" >
 
                 <ul class="no-button">
-                  <div class="commentContainer">
+                  <div class="item6">
+                    <br>
                     ${
-                    chore.Comments.map(c => `<li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
+                    chore.Comments.map(c => ` 
+                    <li> <b>${c.username}</b> ~ ${c.post} -- ${c.createdAt.toString().slice(4,21)}  </li>`).join('')}
                       <form action="${tid}/comment" method="POST">
                         <textarea name="comment" id="" cols="20" rows="10" placeholder="add a comment to ${chore.name}"></textarea>
                         <input  type="hidden" name="itemID" value="${chore.id}">
